@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1931"/>
+      <stop offset="50%" stop-color="#152642"/>
+      <stop offset="100%" stop-color="#0f2b5c"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6d365"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#b8860b"/>
+    </linearGradient>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#0b1a3d"/>
+    </linearGradient>
+    
+    <!-- Text Paths for Circular Text -->
+    <path id="textArcTop" d="M 50,200 A 150,150 0 1,1 350,200" fill="none"/>
+    <path id="textArcBottom" d="M 350,200 A 150,150 0 0,1 50,200" fill="none"/>
+  </defs>
+
+  <!-- Outer Shadow & Background -->
+  <circle cx="200" cy="200" r="190" fill="url(#blueGrad)" stroke="url(#goldGrad)" stroke-width="6"/>
+  <circle cx="200" cy="200" r="182" fill="none" stroke="#ffffff" stroke-opacity="0.2" stroke-width="1.5"/>
+
+  <!-- Inner Gold Ring -->
+  <circle cx="200" cy="200" r="140" fill="none" stroke="url(#goldGrad)" stroke-width="3" stroke-dasharray="6,4"/>
+  <circle cx="200" cy="200" r="132" fill="url(#shieldGrad)" stroke="url(#goldGrad)" stroke-width="2"/>
+
+  <!-- University Name Curved Text -->
+  <text font-family="'Cinzel', 'Trajan Pro', 'Georgia', serif" font-size="19" font-weight="bold" fill="url(#goldGrad)" letter-spacing="3.5">
+    <textPath href="#textArcTop" startOffset="50%" text-anchor="middle">
+      APEX UNIVERSITY OF TECHNOLOGY
+    </textPath>
+  </text>
+  <text font-family="'Cinzel', 'Georgia', serif" font-size="14" font-weight="600" fill="#ffffff" letter-spacing="4">
+    <textPath href="#textArcBottom" startOffset="50%" text-anchor="middle">
+      ★ EXCELLENCE • INTEGRITY • INNOVATION ★
+    </textPath>
+  </text>
+
+  <!-- Stars on Ring Sides -->
+  <polygon points="46,200 48,206 54,206 49,210 51,216 46,212 41,216 43,210 38,206 44,206" fill="url(#goldGrad)"/>
+  <polygon points="354,200 356,206 362,206 357,210 359,216 354,212 349,216 351,210 346,206 352,206" fill="url(#goldGrad)"/>
+
+  <!-- Center Shield -->
+  <path d="M 150,135 Q 200,120 250,135 Q 255,200 200,245 Q 145,200 150,135 Z" fill="#0f2b5c" stroke="url(#goldGrad)" stroke-width="3"/>
+
+  <!-- Graduation Cap (Mortarboard) -->
+  <polygon points="200,140 235,152 200,164 165,152" fill="url(#goldGrad)"/>
+  <polygon points="182,160 182,174 200,181 218,174 218,160 200,167" fill="#ffffff"/>
+  <!-- Tassel -->
+  <path d="M 235,152 Q 242,162 240,178" fill="none" stroke="url(#goldGrad)" stroke-width="2"/>
+  <circle cx="240" cy="180" r="3" fill="url(#goldGrad)"/>
+
+  <!-- Open Book -->
+  <path d="M 172,192 Q 186,197 200,193 Q 214,197 228,192 L 228,212 Q 214,217 200,213 Q 186,217 172,212 Z" fill="#ffffff" stroke="url(#goldGrad)" stroke-width="1.5"/>
+  <line x1="200" y1="193" x2="200" y2="213" stroke="url(#goldGrad)" stroke-width="1.5"/>
+  <!-- Book page lines -->
+  <line x1="176" y1="198" x2="195" y2="200" stroke="#0a1931" stroke-width="1"/>
+  <line x1="176" y1="203" x2="195" y2="205" stroke="#0a1931" stroke-width="1"/>
+  <line x1="205" y1="200" x2="224" y2="198" stroke="#0a1931" stroke-width="1"/>
+  <line x1="205" y1="205" x2="224" y2="203" stroke="#0a1931" stroke-width="1"/>
+
+  <!-- Laurel Wreath Around Shield -->
+  <!-- Left Wreath -->
+  <path d="M 132,150 Q 120,195 145,235 Q 165,255 190,265" fill="none" stroke="url(#goldGrad)" stroke-width="2.5"/>
+  <circle cx="128" cy="165" r="4" fill="url(#goldGrad)"/>
+  <circle cx="124" cy="185" r="4.5" fill="url(#goldGrad)"/>
+  <circle cx="128" cy="205" r="4" fill="url(#goldGrad)"/>
+  <circle cx="138" cy="225" r="4" fill="url(#goldGrad)"/>
+  <circle cx="155" cy="245" r="3.5" fill="url(#goldGrad)"/>
+
+  <!-- Right Wreath -->
+  <path d="M 268,150 Q 280,195 255,235 Q 235,255 210,265" fill="none" stroke="url(#goldGrad)" stroke-width="2.5"/>
+  <circle cx="272" cy="165" r="4" fill="url(#goldGrad)"/>
+  <circle cx="276" cy="185" r="4.5" fill="url(#goldGrad)"/>
+  <circle cx="272" cy="205" r="4" fill="url(#goldGrad)"/>
+  <circle cx="262" cy="225" r="4" fill="url(#goldGrad)"/>
+  <circle cx="245" cy="245" r="3.5" fill="url(#goldGrad)"/>
+
+  <!-- APEX Monogram Banner -->
+  <rect x="150" y="270" width="100" height="26" rx="5" fill="url(#goldGrad)" stroke="#ffffff" stroke-width="1"/>
+  <text x="200" y="289" font-family="'Segoe UI', 'Montserrat', Arial, sans-serif" font-size="18" font-weight="900" fill="#0a1931" text-anchor="middle" letter-spacing="4">APEX</text>
+</svg>

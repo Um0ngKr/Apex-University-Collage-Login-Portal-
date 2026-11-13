@@ -1,0 +1,677 @@
+/* ==========================================================================
+   APEX UNIVERSITY OF TECHNOLOGY (APEX)
+   Official Portal Stylesheet
+   Theme: Royal Blue, Clean White, Subtle Gold Accents
+   Light and Dark Mode Compatible
+   ========================================================================== */
+
+:root {
+  --apex-navy: #0a192f;
+  --apex-blue-dark: #0f2b5c;
+  --apex-blue: #1e3a8a;
+  --apex-blue-primary: #1d4ed8;
+  --apex-blue-light: #3b82f6;
+  --apex-blue-subtle: #eff6ff;
+  
+  --apex-gold: #d4af37;
+  --apex-gold-light: #fef3c7;
+  --apex-gold-hover: #b8860b;
+  --apex-gold-border: #f59e0b;
+  
+  --apex-bg: #f8fafc;
+  --apex-surface: #ffffff;
+  --apex-card-bg: #ffffff;
+  --apex-border: #e2e8f0;
+  --apex-text: #1e293b;
+  --apex-text-muted: #64748b;
+  --apex-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --apex-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  
+  --sidebar-width: 260px;
+  --header-height: 76px;
+}
+
+[data-bs-theme="dark"], [data-theme="dark"] {
+  --apex-bg: #0b1329;
+  --apex-surface: #111d38;
+  --apex-card-bg: #152445;
+  --apex-border: #1e335e;
+  --apex-text: #f1f5f9;
+  --apex-text-muted: #94a3b8;
+  --apex-blue-subtle: #13274f;
+  --apex-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  --apex-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--apex-bg);
+  color: var(--apex-text);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ==========================================================================
+   Header & Navbar
+   ========================================================================== */
+.apex-header {
+  background: linear-gradient(135deg, var(--apex-navy) 0%, var(--apex-blue-dark) 50%, #1e3a8a 100%);
+  border-bottom: 3px solid var(--apex-gold);
+  padding: 0.75rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.apex-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+}
+
+.apex-brand-logo {
+  width: 58px;
+  height: 58px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  transition: transform 0.3s ease;
+}
+
+.apex-brand:hover .apex-brand-logo {
+  transform: rotate(5deg) scale(1.05);
+}
+
+.apex-brand-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.apex-brand-subtitle {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--apex-gold);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.apex-nav-link {
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.85rem !important;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.apex-nav-link:hover, .apex-nav-link.active {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-bottom: 2px solid var(--apex-gold);
+}
+
+.btn-theme-toggle {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 0.35rem 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: var(--apex-gold);
+  color: var(--apex-gold);
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.apex-hero {
+  background: linear-gradient(135deg, rgba(15, 43, 92, 0.95) 0%, rgba(30, 58, 138, 0.92) 100%),
+              radial-gradient(circle at top right, rgba(212, 175, 55, 0.2), transparent 400px);
+  color: #ffffff;
+  padding: 3rem 0 2.5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.apex-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--apex-gold), #ffffff, var(--apex-gold));
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid var(--apex-gold);
+  color: var(--apex-gold);
+  padding: 0.35rem 0.85rem;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+   5 Portal Cards
+   ========================================================================== */
+.portal-cards-container {
+  margin-top: -2.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 10;
+}
+
+.portal-card {
+  background: var(--apex-card-bg);
+  border: 1px solid var(--apex-border);
+  border-radius: 12px;
+  padding: 1.75rem 1.25rem;
+  text-decoration: none;
+  color: var(--apex-text);
+  box-shadow: var(--apex-shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.portal-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  transition: height 0.2s ease;
+}
+
+.portal-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--apex-shadow-lg);
+  border-color: var(--apex-gold);
+  color: var(--apex-text);
+}
+
+.portal-card:hover::before {
+  height: 6px;
+}
+
+.portal-card.card-student::before { background: #0284c7; }
+.portal-card.card-admin::before { background: #1e3a8a; }
+.portal-card.card-teacher::before { background: #059669; }
+.portal-card.card-college::before { background: #7c3aed; }
+.portal-card.card-result::before { background: #d97706; }
+
+.portal-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.portal-card:hover .portal-icon {
+  transform: scale(1.1);
+}
+
+.card-student .portal-icon { background: #e0f2fe; color: #0284c7; }
+.card-admin .portal-icon { background: #e0e7ff; color: #1e3a8a; }
+.card-teacher .portal-icon { background: #d1fae5; color: #059669; }
+.card-college .portal-icon { background: #ede9fe; color: #7c3aed; }
+.card-result .portal-icon { background: #fef3c7; color: #d97706; }
+
+[data-bs-theme="dark"] .card-student .portal-icon { background: #0c4a6e; color: #38bdf8; }
+[data-bs-theme="dark"] .card-admin .portal-icon { background: #1e293b; color: #818cf8; }
+[data-bs-theme="dark"] .card-teacher .portal-icon { background: #064e3b; color: #34d399; }
+[data-bs-theme="dark"] .card-college .portal-icon { background: #3b0764; color: #c084fc; }
+[data-bs-theme="dark"] .card-result .portal-icon { background: #451a03; color: #fbbf24; }
+
+.portal-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.portal-desc {
+  font-size: 0.85rem;
+  color: var(--apex-text-muted);
+  flex-grow: 1;
+  margin-bottom: 1rem;
+  line-height: 1.45;
+}
+
+.portal-action {
+  font-size: 0.88rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: auto;
+}
+
+.card-student .portal-action { color: #0284c7; }
+.card-admin .portal-action { color: #1e3a8a; }
+.card-teacher .portal-action { color: #059669; }
+.card-college .portal-action { color: #7c3aed; }
+.card-result .portal-action { color: #d97706; }
+
+[data-bs-theme="dark"] .card-admin .portal-action { color: #93c5fd; }
+
+/* ==========================================================================
+   Important Updates & Instructions Tabs
+   ========================================================================== */
+.updates-tabs {
+  border-bottom: 2px solid var(--apex-border);
+  margin-bottom: 1.5rem;
+}
+
+.updates-tab-btn {
+  background: transparent;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--apex-text-muted);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.updates-tab-btn.active {
+  color: var(--apex-blue-primary);
+  border-bottom: 3px solid var(--apex-blue-primary);
+}
+
+[data-bs-theme="dark"] .updates-tab-btn.active {
+  color: var(--apex-gold);
+  border-bottom: 3px solid var(--apex-gold);
+}
+
+.update-card {
+  background: var(--apex-card-bg);
+  border: 1px solid var(--apex-border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  box-shadow: var(--apex-shadow);
+  transition: transform 0.2s ease;
+}
+
+.update-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--apex-gold);
+}
+
+.update-badge {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   Dashboard Sidebar & Layout
+   ========================================================================== */
+.dashboard-wrapper {
+  display: flex;
+  min-height: calc(100vh - var(--header-height));
+}
+
+.dashboard-sidebar {
+  width: var(--sidebar-width);
+  background: var(--apex-navy);
+  border-right: 1px solid var(--apex-border);
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  color: #e2e8f0;
+}
+
+.sidebar-user {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-user-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #ffffff;
+  margin-bottom: 0.2rem;
+}
+
+.sidebar-user-role {
+  font-size: 0.78rem;
+  color: var(--apex-gold);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.sidebar-link:hover, .sidebar-link.active {
+  background: rgba(212, 175, 55, 0.15);
+  color: var(--apex-gold);
+  border-left: 3px solid var(--apex-gold);
+}
+
+.dashboard-content {
+  flex-grow: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  background-color: var(--apex-bg);
+}
+
+/* ==========================================================================
+   Stat Cards & Metrics
+   ========================================================================== */
+.stat-card {
+  background: var(--apex-card-bg);
+  border: 1px solid var(--apex-border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--apex-shadow);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--apex-blue-light);
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.stat-number {
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0;
+  color: var(--apex-text);
+}
+
+.stat-label {
+  font-size: 0.82rem;
+  color: var(--apex-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Tables & Data Presentation
+   ========================================================================== */
+.apex-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--apex-border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--apex-card-bg);
+}
+
+.apex-table th {
+  background: var(--apex-blue-dark);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.85rem 1rem;
+  border: none;
+}
+
+.apex-table td {
+  padding: 0.85rem 1rem;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--apex-border);
+  vertical-align: middle;
+  color: var(--apex-text);
+}
+
+.apex-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.apex-table tbody tr:hover {
+  background-color: var(--apex-blue-subtle);
+}
+
+/* Compact Table Variant */
+.apex-table.apex-table-compact td {
+  padding: 0.6rem 0.75rem;
+}
+
+/* Action Button Group in Tables */
+.teacher-actions,
+.table-actions {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.teacher-actions form,
+.table-actions form {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+}
+
+.teacher-actions .btn,
+.table-actions .btn {
+  height: 32px;
+  padding: 0 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1;
+  border-radius: 6px;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.teacher-actions .btn-icon-only,
+.table-actions .btn-icon-only {
+  width: 32px;
+  padding: 0;
+}
+
+/* ==========================================================================
+   Buttons & Form Controls
+   ========================================================================== */
+.btn-apex-primary {
+  background: var(--apex-blue-primary);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.6rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--apex-blue-primary);
+  transition: all 0.2s ease;
+}
+
+.btn-apex-primary:hover {
+  background: #1e40af;
+  color: #ffffff;
+  border-color: #1e40af;
+}
+
+.btn-apex-gold {
+  background: var(--apex-gold);
+  color: #0a192f;
+  font-weight: 700;
+  padding: 0.6rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--apex-gold);
+  transition: all 0.2s ease;
+}
+
+.btn-apex-gold:hover {
+  background: var(--apex-gold-hover);
+  color: #ffffff;
+}
+
+.form-control, .form-select {
+  background-color: var(--apex-surface);
+  color: var(--apex-text);
+  border: 1px solid var(--apex-border);
+  border-radius: 8px;
+  padding: 0.6rem 0.85rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--apex-blue-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  background-color: var(--apex-surface);
+  color: var(--apex-text);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.apex-footer {
+  background: var(--apex-navy);
+  border-top: 3px solid var(--apex-gold);
+  color: #cbd5e1;
+  padding: 3rem 0 1.5rem 0;
+  margin-top: auto;
+}
+
+.footer-heading {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 35px;
+  height: 2px;
+  background: var(--apex-gold);
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-links a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--apex-gold);
+  padding-left: 4px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 991px) {
+  .dashboard-wrapper {
+    flex-direction: column;
+  }
+  .dashboard-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--apex-border);
+  }
+  .portal-cards-container {
+    margin-top: 1rem;
+  }
+}
